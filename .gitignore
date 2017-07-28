@@ -50,3 +50,8 @@ Temporary Items
 # Node.js
 # =========================
 node_modules
+
+# =========================
+# Project Build
+# =========================
+build
