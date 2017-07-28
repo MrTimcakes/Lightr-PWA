@@ -1,6 +1,6 @@
 {
-  "name": "Preact PWA",
-  "short_name": "Preact PWA",
+  "name": "Lightr",
+  "short_name": "Lightr",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
