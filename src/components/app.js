@@ -1,11 +1,11 @@
 import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
-import Header from './header';
+import AppShell from './appShell';
+import 'preact-material-components/style.css';
+
 import Home from '../routes/home';
-import Profile from '../routes/profile';
-// import Home from 'async!./home';
-// import Profile from 'async!./profile';
+import Settings from '../routes/settings';
 
 export default class App extends Component {
 	/** Gets fired when the route changes.
@@ -19,11 +19,10 @@ export default class App extends Component {
 	render() {
 		return (
 			<div id="app">
-				<Header />
+				<AppShell />
 				<Router onChange={this.handleRoute}>
 					<Home path="/" />
-					<Profile path="/profile/" user="me" />
-					<Profile path="/profile/:user" />
+					<Settings path="/settings" />
 				</Router>
 			</div>
 		);
