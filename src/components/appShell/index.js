@@ -13,7 +13,7 @@ export default class AppShell extends Component {
 
 	render() {
 		return (
-			<div>
+			<div className={ style.appShell }>
 				<Toolbar>
 					<Toolbar.Row>
 						<Toolbar.Section align-start={true}>
