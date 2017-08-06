@@ -6,6 +6,7 @@
     <title>Lightr</title>
     <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/index.min.css">
   </head>
   <body>
 
@@ -54,14 +55,14 @@
 
 
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
-    <script>window.mdc.autoInit();</script>
     <script>
-      var drawerEl = document.querySelector('.mdc-temporary-drawer');
+      window.mdc.autoInit();
       var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
-      var drawer = new MDCTemporaryDrawer(drawerEl);
+      var drawer = new MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
       document.querySelector('.app-menu').addEventListener('click', function() {
-      drawer.open = true;
+        drawer.open = true;
       });
     </script>
+    <script defer src="/js/app.js"></script>
   </body>
 </html>
