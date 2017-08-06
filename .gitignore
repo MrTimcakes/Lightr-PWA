@@ -55,3 +55,9 @@ node_modules
 # Project Build
 # =========================
 build
+
+# =========================
+# SSL Certificates
+# =========================
+cert.pem
+key.pem
