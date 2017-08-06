@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="mdc-typography">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Lightr - Settings</title>
+    <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="/css/settings.min.css">
+  </head>
+  <body>
+
+
+
+    <div class="mdc-toolbar mdc-toolbar--fixed">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="app-menu material-icons mdc-toolbar__icon--menu">menu</button>
+          <span class="mdc-toolbar__title catalog-title">Lightr</span>
+        </section>
+      </div>
+    </div>
+
+    <aside class="mdc-temporary-drawer">
+      <nav class="mdc-temporary-drawer__drawer">
+        <header class="mdc-temporary-drawer__header">
+          <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+            Lightr
+          </div>
+        </header>
+        <nav class="mdc-temporary-drawer__content mdc-list-group">
+          <div id="icon-with-text-demo" class="mdc-list">
+            <a class="mdc-list-item mdc-temporary-drawer--selected" href="/">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">home</i>Home
+            </a>
+          </div>
+
+          <hr class="mdc-list-divider">
+
+          <div class="mdc-list">
+            <a class="mdc-list-item" href="/settings">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">settings</i>Settings
+            </a>
+          </div>
+        </nav>
+      </nav>
+    </aside>
+
+
+    <main class="app-main mdc-toolbar-fixed-adjust">
+      <h1 class="mdc-typography--display1">Temporary Drawer</h1>
+      <p class="mdc-typography--body1">Click the menu icon above to open.</p>
+    </main>
+
+
+
+
+    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+    <script>
+      window.mdc.autoInit();
+      var MDCTemporaryDrawer = mdc.drawer.MDCTemporaryDrawer;
+      var drawer = new MDCTemporaryDrawer(document.querySelector('.mdc-temporary-drawer'));
+      document.querySelector('.app-menu').addEventListener('click', function() {
+        drawer.open = true;
+      });
+    </script>
+    <script defer src="/js/settings.js"></script>
+  </body>
+</html>
