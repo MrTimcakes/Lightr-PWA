@@ -6,7 +6,7 @@ export default class Settings extends Component {
 		return (
 			<div class={style.settings}>
 				<h1>Settings</h1>
-				<p>This is the Settings component.</p>
+				<p>This is the Settings route.</p>
 			</div>
 		);
 	}
