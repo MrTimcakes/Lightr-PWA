@@ -2,7 +2,7 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
 import AppShell from './appShell';
-import 'preact-material-components/style.css';
+import style from 'preact-material-components/style.css';
 
 import Home from '../routes/home';
 import Settings from '../routes/settings';
@@ -20,10 +20,12 @@ export default class App extends Component {
 		return (
 			<div id="app">
 				<AppShell />
-				<Router onChange={this.handleRoute}>
-					<Home path="/" />
-					<Settings path="/settings" />
-				</Router>
+				<main class='mdc-toolbar-fixed-adjust' >
+					<Router onChange={this.handleRoute}>
+						<Home path="/" />
+						<Settings path="/settings" />
+					</Router>
+				</main>
 			</div>
 		);
 	}
