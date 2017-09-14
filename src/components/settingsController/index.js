@@ -11,6 +11,15 @@ import Button from 'preact-material-components/Button';
 import style from './style';
 
 export default class SettingsController extends Component {
+	componentDidMount() {
+		localforage.getItem('MQTT-Settings').then(function(value) {
+			//console.log(value);
+			objToForm(value, document.getElementById('settingsForm'));
+		}).catch(function(err) {
+			console.log(err);
+		});
+	}
+
 	render() {
 		return (
 			<div class={ style.settingsController }>
@@ -32,13 +41,6 @@ export default class SettingsController extends Component {
 		);
 	}
 }
-
-localforage.getItem('MQTT-Settings').then(function(value) {
-	console.log(value);
-	objToForm(value, document.getElementById('settingsForm'));
-}).catch(function(err) {
-	console.log(err);
-});
 
 function saveSettings(){
 	localforage.setItem('MQTT-Settings', formToObj(document.getElementById('settingsForm')) ).then(function(value) {
