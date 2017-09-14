@@ -1,4 +1,5 @@
 import { h, Component } from 'preact';
+import SettingsController from '../../components/settingsController';
 import style from './style';
 
 export default class Settings extends Component {
@@ -6,7 +7,7 @@ export default class Settings extends Component {
 		return (
 			<div class={style.settings}>
 				<h1>Settings</h1>
-				<p>This is the Settings route.</p>
+				<SettingsController />
 			</div>
 		);
 	}
