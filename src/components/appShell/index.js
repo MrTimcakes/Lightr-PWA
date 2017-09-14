@@ -14,7 +14,7 @@ export default class AppShell extends Component {
 	render() {
 		return (
 			<div className={ style.appShell }>
-				<Toolbar>
+				<Toolbar fixed={true}>
 					<Toolbar.Row>
 						<Toolbar.Section align-start={true}>
 							<Toolbar.Icon href="#" onClick={(e)=>{ e.preventDefault(); this.drawer.MDComponent.open = true; }}>
@@ -32,12 +32,12 @@ export default class AppShell extends Component {
 	        </Drawer.TemporaryDrawerHeader>
 	        <Drawer.TemporaryDrawerContent>
 	        <List>
-	          <List.LinkItem onClick={(e) =>{ route("/"); this.closeDrawer(); }}>
+	          <List.LinkItem href="/" onClick={(e) =>{ e.preventDefault(); route("/"); this.closeDrawer(); }}>
 	            <List.ItemIcon>home</List.ItemIcon>
 	            Home
 	          </List.LinkItem>
 						<hr class="mdc-list-divider" />
-	          <List.LinkItem onClick={(e) =>{ route("/settings"); this.closeDrawer(); }}>
+	          <List.LinkItem href="/settings" onClick={(e) =>{ e.preventDefault(); route("/settings"); this.closeDrawer(); }}>
 	            <List.ItemIcon>settings</List.ItemIcon>
 	            Settings
 	          </List.LinkItem>
