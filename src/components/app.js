@@ -2,6 +2,7 @@ import { h, Component } from 'preact';
 import { Router } from 'preact-router';
 
 import AppShell from './appShell';
+import Snackbar from 'preact-material-components/Snackbar';
 import style from 'preact-material-components/style.css';
 
 import Home from '../routes/home';
@@ -25,6 +26,7 @@ export default class App extends Component {
 						<Home path="/" />
 						<Settings path="/settings" />
 					</Router>
+					<Snackbar class={"mdc-snackbar--align-start"} ref={bar=>{window.snackbar=bar;}}/>
 				</main>
 			</div>
 		);
