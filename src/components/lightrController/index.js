@@ -83,7 +83,6 @@ function onConnectionLost(responseObject) {
 }
 
 function onMessageArrived(message) {
-  console.log(message);
   if(message.destinationName === "lights/all/status"){
     let newDevice = JSON.parse(message.payloadString);
     let tempDevices = window.lightrController.state.devices;
@@ -96,6 +95,7 @@ function onMessageArrived(message) {
     });
     if(!alreadyExists){
       tempDevices.push(newDevice);
+      tempDevices.sort(function(a, b) { return a.nickname > b.nickname}); // If new device added, alphabetically sort them
     }
 
     window.lightrController.setState({devices: tempDevices});
@@ -108,7 +108,6 @@ function MQTTdisconnect(){
 }
 
 function toggleLight(light){
-  console.log(light.MAC);
   let message = new Paho.MQTT.Message("t");
   message.destinationName = `lights/${light.MAC}/set`;
   window.MQTTClient.send(message);
