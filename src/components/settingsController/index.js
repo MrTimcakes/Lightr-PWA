@@ -58,15 +58,15 @@ export default class SettingsController extends Component {
 			<div class={ style.settingsController }>
 				<Formfield id="settingsForm">
 					<list>
-						<List.Item><Textfield name="MQTTHOST" 				label="MQTT Host" 					 onInput={this.handleInputChange} value={this.state.settings.MQTTHOST} /></List.Item>
-						<List.Item><Textfield name="MQTTPORT" 				label="MQTT WebSocket Port"  onInput={this.handleInputChange} value={this.state.settings.MQTTPORT} /></List.Item>
-						<List.Item><Textfield name="MQTTCLIENTPREFIX" label="MQTT Client-Prefix" 	 onInput={this.handleInputChange} value={this.state.settings.MQTTCLIENTPREFIX} /></List.Item>
-						<List.Item><Textfield name="MQTTPATH" 				label="MQTT Path" 					 onInput={this.handleInputChange} value={this.state.settings.MQTTPATH} /></List.Item>
-						<List.Item><Textfield name="MQTTUSERNAME" 		label="MQTT Username" 			 onInput={this.handleInputChange} value={this.state.settings.MQTTUSERNAME} /></List.Item>
-						<List.Item><Textfield name="MQTTPASSWORD" 		label="MQTT Password" 			 onInput={this.handleInputChange} value={this.state.settings.MQTTPASSWORD} /></List.Item>
-						<List.Item><Textfield name="MQTTKEEPALIVE" 		label="MQTT Keep-Alive" 		 onInput={this.handleInputChange} value={this.state.settings.MQTTKEEPALIVE} /></List.Item>
-						<List.Item><Textfield name="MQTTTIMEOUT" 			label="MQTT Timeout" 				 onInput={this.handleInputChange} value={this.state.settings.MQTTTIMEOUT} /></List.Item>
-						<List.Item><label for="MQTTSSL">SSL: </label><Checkbox name="MQTTSSL" 		 onChange={this.handleInputChange} checked={this.state.settings.MQTTSSL} /></List.Item>
+						<List.Item><Textfield name="MQTTHOST" 				label="MQTT Host" 					 onInput={this.handleInputChange} value={this.state.settings.MQTTHOST} 					/></List.Item>
+						<List.Item><Textfield name="MQTTPORT" 				label="MQTT WebSocket Port"  onInput={this.handleInputChange} value={this.state.settings.MQTTPORT} 					type="number" /></List.Item>
+						<List.Item><Textfield name="MQTTCLIENTPREFIX" label="MQTT Client-Prefix" 	 onInput={this.handleInputChange} value={this.state.settings.MQTTCLIENTPREFIX} 	/></List.Item>
+						<List.Item><Textfield name="MQTTPATH" 				label="MQTT Path" 					 onInput={this.handleInputChange} value={this.state.settings.MQTTPATH} 					/></List.Item>
+						<List.Item><Textfield name="MQTTUSERNAME" 		label="MQTT Username" 			 onInput={this.handleInputChange} value={this.state.settings.MQTTUSERNAME} 			/></List.Item>
+						<List.Item><Textfield name="MQTTPASSWORD" 		label="MQTT Password" 			 onInput={this.handleInputChange} value={this.state.settings.MQTTPASSWORD} 			type="password" /></List.Item>
+						<List.Item><Textfield name="MQTTKEEPALIVE" 		label="MQTT Keep-Alive" 		 onInput={this.handleInputChange} value={this.state.settings.MQTTKEEPALIVE} 		/></List.Item>
+						<List.Item><Textfield name="MQTTTIMEOUT" 			label="MQTT Timeout" 				 onInput={this.handleInputChange} value={this.state.settings.MQTTTIMEOUT} 			/></List.Item>
+						<List.Item><label for="MQTTSSL">SSL: </label><Checkbox name="MQTTSSL" 		 onChange={this.handleInputChange} checked={this.state.settings.MQTTSSL} 				/></List.Item>
 						<List.Item><Button ripple={true} primary={true} raised={true} onClick={()=>{stateToStorage(this)}}>Save</Button></List.Item>
 					</list>
 				</Formfield>
