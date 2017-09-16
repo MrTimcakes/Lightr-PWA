@@ -37,7 +37,9 @@ export default class lightrController extends Component {
         <ul>
           {
             Object.keys(this.state.devices).map(function(key) {
-              return <li onClick={()=>{toggleLight(this.state.devices[key])}}>{this.state.devices[key]['nickname']} {this.state.devices[key]['status']?"On":"Off"}</li>
+              return <li onClick={()=>{toggleLight(this.state.devices[key])}}>
+                <span>{this.state.devices[key]['nickname']} {this.state.devices[key]['status']?"On":"Off"}</span>
+              </li>
             }.bind(this))
           }
         </ul>
